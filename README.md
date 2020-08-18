@@ -1,3 +1,3 @@
 # Movie App
 
-Movie website based on React JS 
+Movie website based on React JS
