@@ -1,11 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import "./Movie.css";
 
-function Movie({id, year, title, summary, poster}) {
-  return <h1>{title}</h1>
+function Movie({ year, title, summary, poster }) {
+  return (
+    <div class="movie">
+      <img src={poster} alt={title} title={title} /> {/* title은 이미지에 hover시 제목 나타냄 */}
+      <div class="movie__data">
+        <h3 class="movie__data">{title}</h3>
+        <h5 class="movie__year">{year}</h5>
+        <p class="movie__summary">{summary}</p>
+      </div>
+    </div>
+  );
 }
 
 Movie.propsTypes = {
+  qw: 
+  console.log(5),
   id: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
