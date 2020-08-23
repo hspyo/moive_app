@@ -12,15 +12,17 @@
   border-radius: 5px;
 }
 
+.nav a {
+  text-decoration: none;
+  color: #0008fc;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 1090px) {
-  .nav a {
-    text-decoration: none;
-    color: #0008fc;
-    text-transform: uppercase;
-    font-size: 12px;
-    text-align: center;
-    font-weight: 600;
-  }
+  
 }
 
 .nav a:not(:last-child) {

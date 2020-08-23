@@ -5,8 +5,9 @@ import About from "./routes/About";
 import Detail from "./routes/Detail";
 import Navigation from "./components/Navigation";
 import "./App.css";
-
+console.log("Appjs")
 function App() {
+  console.log("app");
 return (
   <HashRouter>
     <Navigation />
