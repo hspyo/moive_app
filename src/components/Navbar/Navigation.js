@@ -6,7 +6,7 @@ function Navigation() {
   return (
     <div className="nav">
       <div className="nav__logo">
-        <img src={require("./imgs/logo.png")} />
+        <img src={require("./imgs/logo.png")} alt="Logo"/>
       </div>
       <div className="nav__menu">
         <Link to="/playing">현재 상영작</Link>
