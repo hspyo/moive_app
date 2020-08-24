@@ -1,21 +1,24 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
-import Home from "./routes/Home";
-import About from "./routes/About";
-import Detail from "./routes/Detail";
 import Navigation from "./components/Navigation";
+import Home from "./routes/Home";
+import NowPlaying from "./routes/NowPlaying";
+import Popular from "./routes/Popular";
+import Upcoming from "./routes/Upcoming";
+import TopRated from "./routes/TopRated";
 import "./App.css";
-console.log("Appjs")
+
 function App() {
-  console.log("app");
-return (
-  <HashRouter>
-    <Navigation />
-    <Route path="/" exact={true} component={Home} />
-    <Route path="/about" component={About} />
-    <Route path="/movie/:id" component={Detail} />
-  </HashRouter>
-);
+  return (
+    <HashRouter>
+      <Navigation />
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/playing" component={NowPlaying} />
+      <Route path="/popular" component={Popular} />
+      <Route path="/Upcoming" component={Upcoming} />
+      <Route path="/topRated" component={TopRated} />
+     </HashRouter>
+  );
 }
 
 export default App;

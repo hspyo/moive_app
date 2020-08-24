@@ -1,30 +1,26 @@
 .nav {
   z-index: 1;
-  position: fixed;
-  top: 50px;
-  left: 10px;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  background-color: white;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: black;
   padding: 10px 20px;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-  border-radius: 5px;
 }
 
+.nav__logo img{
+  width: 50px;
+  height: 50px;
+}
 .nav a {
   text-decoration: none;
-  color: #0008fc;
+  color: white;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
   text-align: center;
   font-weight: 600;
-}
-
-@media screen and (max-width: 1090px) {
-  
-}
-
-.nav a:not(:last-child) {
-  margin-bottom: 20px;
+  margin-left: 20px;
 }

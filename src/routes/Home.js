@@ -1,59 +1,42 @@
-import React from "react";
-import axios from "axios";
-import Movie from '../components/Movie';
-import "./Home.css";
-console.log("home");
+import React, { useEffect, useState } from "react";
+import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
+import MainImage from "../components/MainImage";
 
-class Home extends React.Component {
-  state = { 
-    isLoading: true,
-    movies: [console.log("appState")],
-  };
-  
-  getMovies = async () => {
-    const {
-      data: {
-        data: { movies },
-      },
-    } = await axios.get(
-      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
-    );
-    this.setState({ movies, isLoading: false }); 
-    console.log("appgetMovies");
-  };
 
-  componentDidMount() {
-    this.getMovies();
-    console.log("appcomponentDidMount");
-  }
-  render() {
-    console.log("appRender");
-    const { isLoading, movies } = this.state;
-    return (
-      <section className="container">
-        {isLoading ? (
-          <div className="loader">
-            <span className="loader__text">Loading...</span>
-          </div>
-        ) : (
-          <div className="movies">
-            {movies.map(movie => (
-              <Movie 
-              key={movie.id}
-              id={movie.id}
-              year={movie.year}
-              title={movie.title}
-              summary={movie.summary}
-              poster={movie.medium_cover_image}
-              genres={movie.genres}
-              runtime={movie.runtime}
-              />
-              ))}
-          </div>
-        )}
-      </section>
-    );        
-  }
+function Home() {
+  const [Movies, setMovies] = useState([]);
+  const [MainMovieImage, setMainMovieImage] = useState(null);
+  // const [CurrentPage, setCurrentPage] = useState(0)
+
+  useEffect(() => {
+    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+
+    fetch(endpoint)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+
+        setMovies([response.results]);
+        setMainMovieImage(response.results[0]);
+      });
+  }, []);
+
+ return (
+    <div style={{ width: "100%", margin: "0" }}>
+      {/* Main Image */}
+      {MainMovieImage && (
+        <MainImage
+          image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
+          title={MainMovieImage.original_title}
+          text={MainMovieImage.overview}
+        />
+      )}
+      <div style={{ width: "85%", margin: "1rem auto", textAlign: "center" }}>
+        <h2>실시간 1위 영화 ⬆</h2>
+        <hr />
+      </div>
+    </div>
+  );
 }
 
 export default Home;
