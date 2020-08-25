@@ -3,7 +3,7 @@ import { HashRouter, Route } from "react-router-dom";
 import Navigation from "./components/Navbar/Navigation";
 import Home from "./components/Home/Home";
 import NowPlaying from "./routes/NowPlaying";
-import Popular from "./routes/Popular";
+import Popular from "./routes/Popular/Popular";
 import Upcoming from "./routes/Upcoming";
 import TopRated from "./routes/TopRated";
 import "./App.css";

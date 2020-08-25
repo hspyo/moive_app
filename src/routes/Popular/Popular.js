@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from "react";
-import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
+import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../Config";
 import PopularDetail from "./PopularDetail";
 
 function Popular() {
@@ -18,16 +18,20 @@ function Popular() {
   },[] );
   console.log(Movies);
   return (
-    <div>
+    <div className="movies">
       {Movies && Movies.map((movie, index) => (
         <React.Fragment key={index}>
         <PopularDetail 
           image={movie.poster_path ?
           `${IMAGE_BASE_URL}w500${movie.poster_path}` : null}
           movieId={movie.id}
-          movieName={movie.original_title}
+          movieName={movie.title}
+          Overview={movie.overview}
+          releaseDate={movie.release_date}
+          popularity={movie.popularity}
           />
           </React.Fragment>
+          
       ))}
   
     </div>
