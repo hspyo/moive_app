@@ -1,4 +1,7 @@
 
+.container {
+  padding: 80px 30px;
+}
 .movies {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -41,6 +44,9 @@
 
 
 @media screen and (max-width: 1090px) {
+  .container {
+    padding: 50px 0
+  }
   .movies {
     grid-template-columns: 1fr;
     width: 100%;

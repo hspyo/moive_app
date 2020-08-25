@@ -5,8 +5,6 @@ function PopularDetail(props) {
   console.log(`${props.image}`);
   return (
     <div className="movie">
-      <a href={`/movie/${props.movieId}`}></a>
-
       <img src={props.image} alt={props.movieName} />
 
       <div className="movie__info">
