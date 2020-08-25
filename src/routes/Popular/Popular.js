@@ -4,19 +4,27 @@ import PopularDetail from "./PopularDetail";
 
 function Popular() {
   const [Movies, setMovies] = useState([]);
-
+  const [CurrentPage, setCurrentPage] = useState(0);
   useEffect(() => {
     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
-
-    fetch(endpoint)
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-
-        setMovies([...Movies, ...response.results]); // ...전개연산자를 사용해야 배열을 업데이트
-      });
-  }, []);
+    fetchMovies(endpoint);
+  }, [])
   console.log(Movies);
+
+  const fetchMovies = (endpoint) => {
+    fetch(endpoint)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+        setMovies([...Movies, ...response.results])
+        setCurrentPage(response.page)
+      })
+  }
+  const moreBtn = () => {
+    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${CurrentPage + 1}`;
+    fetchMovies(endpoint);
+  }
+
   return (
     <section className="container">
       <div className="movies">
@@ -37,6 +45,9 @@ function Popular() {
               />
             </React.Fragment>
           ))}
+      </div>
+      <div className="moreBtn">
+        <button onClick={moreBtn}>See more movies</button>
       </div>
     </section>
   );

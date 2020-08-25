@@ -41,6 +41,18 @@
   font-weight: 900;
   font-size: 1.2rem;
 }
+.moreBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.moreBtn button {
+  background-color: white;
+  border-radius: 10px;
+  border-color: whitesmoke;
+  color: rgb(214, 81, 81);
+  font-weight: 700;
+  }
 
 @media screen and (max-width: 1090px) {
   .container {
