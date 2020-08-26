@@ -39,9 +39,8 @@ function Popular() {
                 }
                 movieId={movie.id}
                 movieName={movie.title}
-                Overview={movie.overview}
                 releaseDate={movie.release_date}
-                popularity={movie.popularity}
+                Overview={movie.overview}
               />
             </React.Fragment>
           ))}

@@ -7,6 +7,7 @@ import Popular from "./routes/Popular/Popular";
 import Upcoming from "./routes/Upcoming";
 import TopRated from "./routes/TopRated";
 import "./App.css";
+import MovieDetail from "./components/MovieDetail/MovieDetail";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/popular" component={Popular} />
       <Route path="/Upcoming" component={Upcoming} />
       <Route path="/topRated" component={TopRated} />
+      <Route path="/movie/:movieId" component={MovieDetail} />
      </HashRouter>
   );
 }
