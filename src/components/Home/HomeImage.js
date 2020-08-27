@@ -26,8 +26,8 @@ function HomeImage(props) {
             marginLeft: "2rem",
           }}
         >
-          <h1 style={{ color: "white" }}> {props.title} </h1>
-          <p style={{ color: "white", fontSize: "1.2rem" }}> {props.text}</p>
+          <h1 style={{ color: "#fff" }}> {props.title} </h1>
+          <p style={{ color: "#fff", fontSize: "1.2rem" }}> {props.text}</p>
         </div>
       </div>
     </div>
