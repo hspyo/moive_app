@@ -40,7 +40,8 @@ function Popular() {
                 movieId={movie.id}
                 movieName={movie.title}
                 releaseDate={movie.release_date}
-                Overview={movie.overview}
+                overview={movie.overview}
+                
               />
             </React.Fragment>
           ))}

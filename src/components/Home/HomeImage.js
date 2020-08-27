@@ -1,7 +1,7 @@
 import React from "react";
 
 function HomeImage(props) {
-  console.log(`${props.image}`);
+  
   return (
     <div
       style={{
@@ -26,6 +26,7 @@ function HomeImage(props) {
             marginLeft: "2rem",
           }}
         >
+          
           <h1 style={{ color: "#fff" }}> {props.title} </h1>
           <p style={{ color: "#fff", fontSize: "1.2rem" }}> {props.text}</p>
         </div>

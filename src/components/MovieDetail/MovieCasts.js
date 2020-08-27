@@ -1,6 +1,6 @@
 import React from "react";
 import "./MovieCasts.css";
-import { logDOM } from '@testing-library/react';
+
 function MovieCasts(props) {
   console.log(props);
   if(props.image !== "null") {

@@ -1,6 +1,6 @@
 import React from "react";
-
 import "./MovieInfo.css";
+
 function MovieInfo(props) {
   const { movie } = props;
   console.log(props);
