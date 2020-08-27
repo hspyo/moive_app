@@ -9,26 +9,26 @@ function MovieInfo(props) {
       <table>
         <thead>
           <tr>
-            <th colspan="4">Overview</th>
+            <th colSpan="4">Overview</th>
           </tr>
         </thead>
 
-        <tbody colspan="4">
+        <tbody colSpan="4">
           <tr className="rowTop">
             <td>Title</td>
-            <td>Vote count</td>
+            <td>Vote</td>
             <td>Release</td>
-            <td>Revenue</td>
+            <td>Language</td>
           </tr>
           <tr className="rowBottom">
             <td>{movie.title}</td>
             <td>{movie.vote_count}</td>
             <td>{movie.release_date}</td>
-            <td>{movie.revenue}</td>
+            <td>{movie.original_language}</td>
           </tr>
           <tr className="rowTop">
             <td>Runtime</td>
-            <td>Vote average</td>
+            <td>Ratings</td>
             <td>Status</td>
             <td>Popularity</td>
           </tr>
