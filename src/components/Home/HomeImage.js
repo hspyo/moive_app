@@ -18,16 +18,16 @@ function HomeImage(props) {
       }}
     >
       <div>
-        <div
+        <div className="overview"
           style={{
             position: "absolute",
-            maxWidth: "500px",
+            maxWidth: "600px",
             bottom: "2rem",
             marginLeft: "2rem",
           }}
         >
           <h1 style={{ color: "#fff" }}> {props.title} </h1>
-          <p style={{ color: "#fff", fontSize: "1.2rem" }}> {props.text}</p>
+          <p style={{ color: "#fff", fontSize: "1.3rem" }}> {props.text}</p>
         </div>
       </div>
     </div>

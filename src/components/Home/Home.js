@@ -18,7 +18,7 @@ function Home() {
   }, []);
 
   return (
-    <div style={{ width: "100%", margin: "0", paddingTop: "70px" }}>
+    <div style={{ width: "100%", margin: "0"}}>
       {/* Main Image */}
       {HomeMovieImage && (
         <HomeImage
