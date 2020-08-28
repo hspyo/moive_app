@@ -36,7 +36,7 @@ function Home() {
           fontSize: "1.2rem",
         }}
       >
-        <h2>실시간 1위 영화 ⬆</h2>
+        <h1>실시간 1위 영화 ⬆</h1>
         <hr />
       </div>
     </div>

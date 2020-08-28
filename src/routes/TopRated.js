@@ -44,6 +44,7 @@ function TopRated() {
                 movieName={movie.title}
                 releaseDate={movie.release_date}
                 overview={movie.overview}
+                movieRate={movie.vote_average}
               />
             </React.Fragment>
           ))}
