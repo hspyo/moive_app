@@ -1,13 +1,13 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
-import Navigation from "./components/Navbar/Navigation";
 import Home from "./components/Home/Home";
+import Navigation from "./components/Navbar/Navigation";
+import MovieDetail from "./components/Common/MovieDetail/MovieDetail";
 import NowPlaying from "./routes/NowPlaying";
-import Popular from "./routes/Popular/Popular";
+import Popular from "./routes/Popular";
 import Upcoming from "./routes/Upcoming";
 import TopRated from "./routes/TopRated";
 import "./App.css";
-import MovieDetail from "./components/MovieDetail/MovieDetail";
 
 function App() {
   return (

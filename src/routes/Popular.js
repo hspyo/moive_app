@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../Config";
-import PopularDetail from "./PopularDetail";
+import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
+import MovieList from "../components/Common/MovieList/MovieList";
 
 function Popular() {
   const [Movies, setMovies] = useState([]);
@@ -8,22 +8,24 @@ function Popular() {
   useEffect(() => {
     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
     fetchMovies(endpoint);
-  }, [])
+  }, []);
   console.log(Movies);
 
   const fetchMovies = (endpoint) => {
     fetch(endpoint)
-      .then(response => response.json())
-      .then(response => {
-        console.log(response)
-        setMovies([...Movies, ...response.results])
-        setCurrentPage(response.page)
-      })
-  }
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setMovies([...Movies, ...response.results]);
+        setCurrentPage(response.page);
+      });
+  };
   const moreBtn = () => {
-    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${CurrentPage + 1}`;
+    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${
+      CurrentPage + 1
+    }`;
     fetchMovies(endpoint);
-  }
+  };
 
   return (
     <section className="container">
@@ -31,7 +33,7 @@ function Popular() {
         {Movies &&
           Movies.map((movie, index) => (
             <React.Fragment key={index}>
-              <PopularDetail
+              <MovieList
                 image={
                   movie.poster_path
                     ? `${IMAGE_BASE_URL}w500${movie.poster_path}`
@@ -41,7 +43,7 @@ function Popular() {
                 movieName={movie.title}
                 releaseDate={movie.release_date}
                 overview={movie.overview}
-                
+                index={index}
               />
             </React.Fragment>
           ))}

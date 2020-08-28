@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../Config";
-import HomeImage from "../Home/HomeImage";
-import MovieInfo from "./MovieInfo";
-import MovieCasts from "./MovieCasts";
+import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../../Config";
+import HomeImage from "../../Home/HomeImage";
+import MovieInfo from "./Info/MovieInfo";
+import MovieCasts from "./Casts/MovieCasts";
 
 function MovieDetail(props) {
   let movieId = props.match.params.movieId;
