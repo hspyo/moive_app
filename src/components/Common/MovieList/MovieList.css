@@ -1,10 +1,16 @@
 .container {
-  margin: 0;
+  margin: 0 0;
   padding: 80px 30px;
   width: 100vh;
 }
 
-.movies {
+.section__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.movie__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
@@ -28,6 +34,15 @@
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
+.movie__top1 {
+  border: 5px solid rgb(248, 248, 103);
+  margin: 0%;
+}
+.movie__top1 span {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: red;
+}
 
 .movie img  {
   position: relative;
@@ -75,7 +90,7 @@
 
 @media screen and (max-width: 1090px) {
  
-  .movies {
+  .movie__container {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;

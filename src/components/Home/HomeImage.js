@@ -3,7 +3,7 @@ import React from "react";
 function HomeImage(props) {
   
   return (
-    <div
+    <div 
       style={{
         background: `linear-gradient(to bottom, rgba(0, 0, 0, 0)
  39%,rgba(0,0,0,0)
@@ -26,7 +26,6 @@ function HomeImage(props) {
             marginLeft: "2rem",
           }}
         >
-          
           <h1 style={{ color: "#fff" }}> {props.title} </h1>
           <p style={{ color: "#fff", fontSize: "1.2rem" }}> {props.text}</p>
         </div>

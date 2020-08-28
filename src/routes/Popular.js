@@ -29,11 +29,13 @@ function Popular() {
 
   return (
     <section className="container">
-      <div className="movies">
+      <div className="section__title">Popular</div>
+      <div className="movie__container">
         {Movies &&
           Movies.map((movie, index) => (
             <React.Fragment key={index}>
               <MovieList
+                index={index}
                 image={
                   movie.poster_path
                     ? `${IMAGE_BASE_URL}w500${movie.poster_path}`
@@ -43,7 +45,6 @@ function Popular() {
                 movieName={movie.title}
                 releaseDate={movie.release_date}
                 overview={movie.overview}
-                index={index}
               />
             </React.Fragment>
           ))}
