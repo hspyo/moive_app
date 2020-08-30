@@ -32,12 +32,13 @@ function Home() {
           width: "85%",
           margin: "1rem auto",
           textAlign: "center",
-          fontFamily: "'Do Hyeon', sans-serif",
+          fontFamily: "'Yeon Sung', cursive",
           fontSize: "1.2rem",
         }}
       >
-        <h1>실시간 1위 영화 ⬆</h1>
-        <hr />
+        <h1 style={{
+          fontWeight:"900"
+        }}>실시간 1위 영화 ⬆</h1>
       </div>
     </div>
   );

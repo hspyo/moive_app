@@ -1,13 +1,15 @@
 .container {
   margin: 0 0;
   padding: 80px 30px;
-  width: 100vh;
+  width: 100vw;
 }
 
 .section__title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 900;
+  margin-top: 30px;
+  font-family: 'Yeon Sung', cursive;
 }
 
 .movie__container {

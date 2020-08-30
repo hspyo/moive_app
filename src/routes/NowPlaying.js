@@ -28,7 +28,7 @@ function NowPlaying() {
   };
   return (
     <section className="container">
-      <div className="section__title">Now Playing</div>
+      <div className="section__title">현재 상영작</div>
       <div className="movie__container">
         {Movies &&
           Movies.map((movie, index) => (

@@ -28,7 +28,7 @@ function TopRated() {
   };
   return (
     <section className="container">
-      <div className="section__title">Top Rated</div>
+      <div className="section__title">높은 평점작</div>
       <div className="movie__container">
         {Movies &&
           Movies.map((movie, index) => (

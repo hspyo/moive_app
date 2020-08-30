@@ -29,7 +29,7 @@ function Popular() {
 
   return (
     <section className="container">
-      <div className="section__title">Popular</div>
+      <div className="section__title">인기작</div>
       <div className="movie__container">
         {Movies &&
           Movies.map((movie, index) => (

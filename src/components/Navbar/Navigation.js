@@ -1,36 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
-import { Nav, Navbar } from "react-bootstrap";
+import NavToggle from './NavToggle';
 
 function Navigation() {
+
   return (
-    <div className="nav">
+    <nav className="nav">
       <div className="nav__logo">
         <Link to="/">
-          <img src={require("./imgs/logo.png")} alt="Logo" />
+          <img src={require("./imgs/logo.png")} alt="Logo" />무비마을
         </Link>
       </div>
       <div className="nav__menu">
-        <Link to="/playing">현재 상영작</Link>
-        <Link to="/popular">인기</Link>
-        <Link to="/upComing">개봉예정</Link>
-        <Link to="/topRated">높은 평점</Link>
+        <Link to="/playing" className="nav__menu__item">현재 상영작</Link>
+        <Link to="/popular" className="nav__menu__item">인기순</Link>
+        <Link to="/topRated" className="nav__menu__item">높은 평점순</Link>
+        <Link to="/upComing" className="nav__menu__item">개봉예정</Link>
       </div>
-      <div className="nav__menu__toggle">
-        <Navbar bg="dark" variant="dark" expand='lg' >
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Link to="/playing">현재 상영작</Link>
-              <Link to="/popular">인기</Link>
-              <Link to="/upComing">개봉예정</Link>
-              <Link to="/topRated">높은 평점</Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </div>
-    </div>
+      <NavToggle className="nav__menu" />
+    </nav>
   );
 }
 
