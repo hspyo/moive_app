@@ -1,3 +1,8 @@
-# Movie App
+# 실시간 영화 API를 활용한 영화 웹사이트 Based on React JS
 
-Movie website based on React JS
+## 주요기능
+
+   1. 실시간 데이터를 기반으로 카테고리별 영화 순위를 보여준다.
+   2. 영화 세부정보 제공 
+   3. 리액트를 활용한 SPA 홈페이지
+   4. 반응형 웹사이트
