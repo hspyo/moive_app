@@ -8,11 +8,12 @@ function MovieList(props) {
   if (props.nowplaying) {
     return (
       <div className="movie">
-        <img src={props.image} alt={props.movieName} />
+        <Link to={`/movie/${props.movieId}`}>
+          <img src={props.image} alt={props.movieName} />
+        </Link>
         <div className="movie__info">
           <p>{props.movieName}</p>
           <h5>{`${props.releaseDate}`}</h5>
-          <Link to={`/movie/${props.movieId}`}>Detail</Link>
         </div>
       </div>
     );
@@ -22,11 +23,12 @@ function MovieList(props) {
     if(props.index) {
       return (
         <div className="movie" >
-        <img src={props.image} alt={props.movieName} />
+        <Link to={`/movie/${props.movieId}`}>
+          <img src={props.image} alt={props.movieName} />
+        </Link>
         <div className="movie__info">
           <p>{props.movieName}</p>
           <h5>{`${props.releaseDate}`}</h5>
-          <Link to={`/movie/${props.movieId}`}>Detail</Link>
         </div>
       </div>
         );
@@ -34,11 +36,12 @@ function MovieList(props) {
       return (
         <div className="movie movie__top1" >
         <span> TOP{props.index + 1}</span>
-        <img src={props.image} alt={props.movieName} />
+        <Link to={`/movie/${props.movieId}`}>
+          <img src={props.image} alt={props.movieName} />
+        </Link>
         <div className="movie__info">
           <p>{props.movieName}</p>
           <h5>{`${props.releaseDate}`}</h5>
-          <Link to={`/movie/${props.movieId}`}>Detail</Link>
         </div>
       </div>
       );
@@ -50,12 +53,13 @@ function MovieList(props) {
   else if (props.upcoming) {
     return (
       <div className="movie">
-        <img src={props.image} alt={props.movieName} />
+        <Link to={`/movie/${props.movieId}`}>
+          <img src={props.image} alt={props.movieName} />
+        </Link>
         <div className="movie__info">
           <p>{props.movieName}</p>
           <h5>Release Date 🕔</h5>
           <h5>{`${props.releaseDate}`}</h5>
-          <Link to={`/movie/${props.movieId}`}>Detail</Link>
         </div>
       </div>
     );
@@ -65,7 +69,10 @@ function MovieList(props) {
     const rate = props.movieRate;
     return (
       <div className="movie">
-        <img src={props.image} alt={props.movieName} />
+        <Link to={`/movie/${props.movieId}`}>
+          <img src={props.image} alt={props.movieName} />
+        </Link>
+      
         <div className="movie__info">
           <p>{props.movieName}</p>
           {rate > 9.5 && <h5>🌕🌕🌕🌕🌕<br/>{rate} / 10</h5>}
@@ -78,7 +85,7 @@ function MovieList(props) {
           {rate >= 2 && rate < 3 && <h5>🌕🌗🌑🌑🌑<br/>{rate} / 10</h5>}
           {rate >= 1 && rate < 2 && <h5>🌕🌑🌑🌑🌑<br/>{rate} / 10</h5>}
           {rate < 1 && <h4>🌗🌑🌑🌑🌑<br/>{rate} / 10</h4>}
-          <Link to={`/movie/${props.movieId}`}>Detail</Link>
+          
         </div>
       </div>
     );

@@ -16,7 +16,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   grid-gap: 0 10px;
   width: 100%;
   height: 100%;
@@ -29,12 +29,12 @@
   align-items: center;
   background-color: white;
   margin-top: 30px;
-  padding: 20px 0;
   border-radius: 10px;
   color: black;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
+
 
 .movie__top1 {
   border: 10px solid rgb(248, 248, 103);
@@ -48,10 +48,9 @@
 
 .movie img  {
   position: relative;
-  max-width: 160px;
-  max-height: 220px;
-  top: 22.5px;
   width: 100%;
+  height: 305px;
+  border-radius: 10px;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
@@ -62,10 +61,10 @@
   width: 100%;
   text-align: center;
   align-items: center;
-  min-height: 180px;
+  height: 100%;
 }
- 
-.movie__info a, .movie__info p {
+
+ .movie__info p {
   font-weight: 900;
   font-size: 1.4rem;
   width: 100%;
