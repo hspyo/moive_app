@@ -1,121 +1,82 @@
-.container {
-  margin: 0 0;
-  padding: 80px 30px;
-  width: 100vw;
-}
-
-.section__title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin-top: 30px;
-  font-family: 'Yeon Sung', cursive;
-}
-
-.movie__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: flex-start;
-  grid-gap: 0 10px;
-  width: 100%;
-  height: 100%;
-}
-
 .movie {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
   margin-top: 30px;
   border-radius: 10px;
-  color: black;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  background: #16152d;
 }
-
 
 .movie__top1 {
   border: 10px solid rgb(248, 248, 103);
   margin: 0%;
 }
-.movie__top1 span {
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: red;
-}
 
-.movie img  {
+.movie img {
   position: relative;
-  width: 100%;
-  height: 305px;
-  border-radius: 10px;
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  width: 70%;
+  height: 50%;
+  top: -30px;
+  left: 30px;
+  border-radius: 5px;
 }
 
 .movie__info {
-  padding: 20px;
   margin-top: 10px;
   width: 100%;
-  text-align: center;
-  align-items: center;
   height: 100%;
+  text-align: start;
+  color: #ffffff;
 }
 
- .movie__info p {
-  font-weight: 900;
-  font-size: 1.4rem;
+.movie__info h1 {
+  font-size: 1.8rem;
   width: 100%;
-  text-align: center;
 }
 
-.movie__info h5 {
-  color: grey;
+
+.movie__info h3 {
+  margin: 20px auto;
+  color: #4a485d;
 }
 
-.moreBtn {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+.movie__info p {
+  font-size: 1rem;
 }
 
-.moreBtn button {
-  background-color: white;
-  border-radius: 10px;
-  border-color: whitesmoke;
-  color: rgb(214, 81, 81);
-  font-weight: 700;
-  }
+.movie__info span {
+  color: #dcbe3e;
+  font-size: 1.8rem;
+  padding-right: 10px;
+}
+
+.ratingStars {
+  color: #dcbe3e;
+  margin-bottom: 5px;
+}
 
 @media screen and (max-width: 1090px) {
- 
-  .movie__container {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
+
   .movie {
-    padding: 10px;
-  }
-  
-  .movie img {
-    max-width: 160px;
-    max-height: 200px;
-    top: 40px;
-  }
-  .movie__info {
-    margin-top: 30px;
-    padding: 30px;
+    width: 100%;
+    padding-bottom: 5%;
+    margin: 2% auto;
   }
 
-  .movie__info h5 {
-    font-size: 1rem;
+  .movie__info h3 {
+    font-size: 0.9rem;
   }
-  .movie__info a, .movie__info p {
-    font-weight: 800;
+
+  .movie a {
+    width: 90%;
+  }
+
+  .movie img {
+    width: 70%;
+    left: 20px;
+  }
+
+  .movie__info h1{
     font-size: 1.5rem;
   }
   

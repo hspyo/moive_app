@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
 import MovieList from "../components/Common/MovieList/MovieList";
+import "./Container.css";
 
 function NowPlaying() {
   const [Movies, setMovies] = useState([]);
@@ -34,7 +35,6 @@ function NowPlaying() {
           Movies.map((movie, index) => (
             <React.Fragment key={index}>
               <MovieList
-                nowplaying
                 image={
                   movie.poster_path
                     ? `${IMAGE_BASE_URL}w500${movie.poster_path}`
@@ -42,14 +42,15 @@ function NowPlaying() {
                 }
                 movieId={movie.id}
                 movieName={movie.title}
-                releaseDate={movie.release_date}
-                overview={movie.overview}
+                movieReleaseDate={movie.release_date}
+                movieLanguage={movie.original_language}
+                movieRate={movie.vote_average}
               />
             </React.Fragment>
           ))}
       </div>
       <div className="moreBtn">
-        <button onClick={moreBtn}>See more movies</button>
+        <button onClick={moreBtn}>View More</button>
       </div>
     </section>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 import "./MovieInfo.css";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 function MovieInfo(props) {
-  const { movie } = props;
-  console.log(props);
+  const { movie } = props; 
   return (
     <div className="tableBox">
       <div className="info__header" colSpan="4">
@@ -24,14 +24,14 @@ function MovieInfo(props) {
             <td className="info__value">{movie.original_language}</td>
           </tr>
           <tr>
-            <td className="info">Runtime</td>
+            <td className="info"> Runtime</td>
             <td className="info__value">{movie.runtime}</td>
             <td className="info">Status</td>
             <td className="info__value">{movie.status}</td>
           </tr>
           <tr>
             <td className="info">Ratings</td>
-            <td className="info__value">{movie.vote_average}</td>
+            <td className="info__value"> ⭐️ {movie.vote_average} </td>
             <td className="info">Popularity</td>
             <td className="info__value">{movie.popularity}</td>
           </tr>

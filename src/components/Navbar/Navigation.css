@@ -1,24 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
 
 .nav {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: space-between;
-  background-color: black;
   border-radius: 3px;
-  align-items: center;
   width: 100%;
   padding: 10px 20px;
   transition: all 300ms ease-in-out;
   font-family: 'Yeon Sung', cursive;
   font-size: 1.4rem;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-  0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   z-index: 1;
+}
+
+.nav__logo {
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .nav__menu {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 5%;
 }
 
@@ -39,9 +43,11 @@
   color: black;
   text-decoration: none;
 }
+
 .nav__logo {
   margin: 0 10%;
 }
+
 .nav__logo a {
   color: #fff;
   font-size: 2.3rem;
@@ -85,6 +91,10 @@
     align-items: flex-start;
   }
 
+  .nav__logo {
+    margin: 0;
+  }
+
   .nav__menu {
     display: none;
   }
@@ -114,11 +124,11 @@
     margin-top: 50px;
     margin-left: 20px;
     font-size: 1rem;
-    background: black;
+    color: #121022;
   }
 
   .nav__menu__item:hover {
-    background-color: black;
+    background: #121022;
     color: gold;
     text-decoration: none;
   }
@@ -132,8 +142,8 @@
   }
 
   .nav__toggle__box {
-    position: fixed;
-    top: 13px;
+    position: absolute;
+    top: 3px;
     right: 16px;
   }
 }

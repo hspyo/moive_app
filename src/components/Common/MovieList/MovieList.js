@@ -1,94 +1,47 @@
 import React from "react";
 import "./MovieList.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 function MovieList(props) {
-  console.log(props);
-  // Now Playing Movies
-  if (props.nowplaying) {
+
+    const movieRate = props.movieRate;
+    const createStar = (star) => {
+      let stars = []
+
+      for (let i=0; i<5; i++) {
+        if(i <= star) {
+          stars.push(<FontAwesomeIcon icon = { faStar } className="ratingStars"/>, " ")
+        } else {
+          stars.push(<FontAwesomeIcon icon = { farStar  } className="ratingStars"/>, " ")
+        }
+      }
+
+      return stars
+    }
+
     return (
       <div className="movie">
         <Link to={`/movie/${props.movieId}`}>
           <img src={props.image} alt={props.movieName} />
         </Link>
         <div className="movie__info">
-          <p>{props.movieName}</p>
-          <h5>{`${props.releaseDate}`}</h5>
+          <h1>{props.movieName}</h1>
+          <h3>
+            {props.movieReleaseDate} <br/>
+            Language : {props.movieLanguage}
+          </h3>
+          {movieRate >= 9.5 && movieRate <= 10 && <p> <span>{movieRate}</span> {createStar(5)}</p>}
+          {movieRate >= 8 && movieRate < 9.5 && <p><span>{movieRate}</span> {createStar(4)}</p>}
+          {movieRate >= 5 && movieRate < 8 && <p><span>{movieRate}</span> {createStar(3)}</p>}
+          {movieRate >= 2 && movieRate < 5 && <p><span>{movieRate}</span> {createStar(2)}</p>}
+          {movieRate >= 0 && movieRate < 2 && <p><span>{movieRate}</span> {createStar(1)}</p>}
         </div>
       </div>
     );
   }
-  // Popular Movies
-  else if (props.popular) {
-    if(props.index) {
-      return (
-        <div className="movie" >
-        <Link to={`/movie/${props.movieId}`}>
-          <img src={props.image} alt={props.movieName} />
-        </Link>
-        <div className="movie__info">
-          <p>{props.movieName}</p>
-          <h5>{`${props.releaseDate}`}</h5>
-        </div>
-      </div>
-        );
-    } else {
-      return (
-        <div className="movie movie__top1" >
-        <span> TOP{props.index + 1}</span>
-        <Link to={`/movie/${props.movieId}`}>
-          <img src={props.image} alt={props.movieName} />
-        </Link>
-        <div className="movie__info">
-          <p>{props.movieName}</p>
-          <h5>{`${props.releaseDate}`}</h5>
-        </div>
-      </div>
-      );
-    }
   
-    }
-    
-  // Upcoming Movies
-  else if (props.upcoming) {
-    return (
-      <div className="movie">
-        <Link to={`/movie/${props.movieId}`}>
-          <img src={props.image} alt={props.movieName} />
-        </Link>
-        <div className="movie__info">
-          <p>{props.movieName}</p>
-          <h5>Release Date 🕔</h5>
-          <h5>{`${props.releaseDate}`}</h5>
-        </div>
-      </div>
-    );
-  }
-  // Top Rated Movies
-  else {
-    const rate = props.movieRate;
-    return (
-      <div className="movie">
-        <Link to={`/movie/${props.movieId}`}>
-          <img src={props.image} alt={props.movieName} />
-        </Link>
-      
-        <div className="movie__info">
-          <p>{props.movieName}</p>
-          {rate > 9.5 && <h5>🌕🌕🌕🌕🌕<br/>{rate} / 10</h5>}
-          {rate >= 8.5 && rate < 9.5 && <h5>🌕🌕🌕🌕🌗<br/>{rate} / 10</h5>}
-          {rate >= 8 && rate < 8.5 && <h5>🌕🌕🌕🌕🌑<br/>{rate} / 10</h5>}
-          {rate >= 7 && rate < 8 && <h5>🌕🌕🌕🌗🌑<br/>{rate} / 10</h5>}
-          {rate >= 5 && rate < 7 && <h5>🌕🌕🌕🌑🌑<br/>{rate} / 10</h5>}
-          {rate >= 4 && rate < 5 && <h5>🌕🌕🌗🌑🌑<br/>{rate} / 10</h5>}
-          {rate >= 3 && rate < 4 && <h5>🌕🌕🌑🌑🌑<br/>{rate} / 10</h5>}
-          {rate >= 2 && rate < 3 && <h5>🌕🌗🌑🌑🌑<br/>{rate} / 10</h5>}
-          {rate >= 1 && rate < 2 && <h5>🌕🌑🌑🌑🌑<br/>{rate} / 10</h5>}
-          {rate < 1 && <h4>🌗🌑🌑🌑🌑<br/>{rate} / 10</h4>}
-          
-        </div>
-      </div>
-    );
-  }
-}
+
 export default MovieList;

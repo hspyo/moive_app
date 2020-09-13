@@ -1,0 +1,54 @@
+.cast_box {
+  text-align: center;
+  background: #0F0D1A;
+}
+
+.cast_box h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.casts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  width: 100%;
+  padding: 2% 5%;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background: #0F0D1A;
+  color: #ffffff;
+}
+
+.cast__toggle__btn {
+  text-align: center;
+  padding: 5% 0;
+  background: #0F0D1A;
+}
+.cast__toggle__btn :hover {
+ background: #ffffff;
+ color: #16152d;
+ cursor: pointer;
+}
+
+.cast__toggle__btn button {
+  background: #16152d;
+  color: #ffffff;
+  border-radius: 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 1px solid #ffffff;
+  outline: none;
+  padding: 15px;
+}
+
+@media screen and (max-width: 1090px) {
+
+  .casts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import "./MovieCasts.css";
 
-function MovieCasts(props) {
-  console.log(props);
+function MovieCasts(props) { 
+  
   if(props.image !== "null") {
       return (
         <div className="cast">
@@ -12,9 +12,8 @@ function MovieCasts(props) {
       );
     } else {
       return (
-
         <div  className="cast">
-        <img src={require("./nophoto.jpg")} alt={props.characterName} />
+        <img src={require("./imgs/nophoto.jpg")} alt={props.characterName} />
         <p>{props.characterName} </p>
        </div>
         );

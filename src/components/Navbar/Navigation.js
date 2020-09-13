@@ -8,9 +8,8 @@ function Navigation() {
   return (
     <nav className="nav">
       <div className="nav__logo">
-        <Link to="/">
-          <img src={require("./imgs/logo.png")} alt="Logo" />무비마을
-        </Link>
+      <img src={require("./imgs/logo.png")} alt="로고" />
+        <Link to="/">MovieTown</Link>
       </div>
       <div className="nav__menu">
         <Link to="/playing" className="nav__menu__item">현재 상영작</Link>

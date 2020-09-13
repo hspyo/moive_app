@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../../Config";
 import HomeImage from "../../Home/HomeImage";
-import MovieInfo from "./Info/MovieInfo";
-import MovieCasts from "./Casts/MovieCasts";
+import MovieInfo from "../MovieInfo/MovieInfo";
+import MovieCasts from "../MovieCasts/MovieCasts";
+import "./MovieDetail.css";
 
 function MovieDetail(props) {
   let movieId = props.match.params.movieId;
@@ -36,7 +37,7 @@ function MovieDetail(props) {
   return (
     <div style={{ width: "100%", margin: "0" }}>
       {/* Header */}
-      {Movie.backdrop_path && ( // Movie path가 들어오지 않고 로딩되면 오류뜸.
+      {Movie.backdrop_path && ( 
         <HomeImage
           image={`${IMAGE_BASE_URL}w1280${Movie.backdrop_path}`}
           title={Movie.original_title}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
 import MovieList from "../components/Common/MovieList/MovieList";
+import "./Container.css";
 
 function TopRated() {
   const [Movies, setMovies] = useState([]);
@@ -42,15 +43,15 @@ function TopRated() {
                 }
                 movieId={movie.id}
                 movieName={movie.title}
-                releaseDate={movie.release_date}
-                overview={movie.overview}
+                movieReleaseDate={movie.release_date}
+                movieLanguage={movie.original_language}
                 movieRate={movie.vote_average}
               />
             </React.Fragment>
           ))}
       </div>
       <div className="moreBtn">
-        <button onClick={moreBtn}>See more movies</button>
+        <button onClick={moreBtn}>View More</button>
       </div>
     </section>
   );

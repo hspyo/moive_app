@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../Config";
 import HomeImage from "./HomeImage";
+import "./Home.css";
 
 function Home() {
   const [HomeMovieImage, setHomeMovieImage] = useState(null);
@@ -18,7 +19,7 @@ function Home() {
   }, []);
 
   return (
-    <div style={{ width: "100%", margin: "0"}}>
+    <div className="home">
       {/* Main Image */}
       {HomeMovieImage && (
         <HomeImage
@@ -27,18 +28,8 @@ function Home() {
           text={HomeMovieImage.overview}
         />
       )}
-      <div
-        style={{
-          width: "85%",
-          margin: "1rem auto",
-          textAlign: "center",
-          fontFamily: "'Yeon Sung', cursive",
-          fontSize: "1.2rem",
-        }}
-      >
-        <h1 style={{
-          fontWeight:"900"
-        }}>실시간 1위 영화 ⬆</h1>
+      <div className="home__description" >
+        <h1>실시간 1위 영화 ⬆</h1>
       </div>
     </div>
   );
