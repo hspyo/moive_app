@@ -51,7 +51,7 @@ function NowPlaying() {
           ))}
       </div>
       <div className="moreBtn">
-        <button onClick={moreBtn}>View More {CurrentPage}</button>
+        <button onClick={moreBtn}> View More </button>
       </div>
     </section>
   );
