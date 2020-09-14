@@ -13,13 +13,13 @@ function MovieList(props) {
 
       for (let i=0; i<5; i++) {
         if(i <= star) {
-          stars.push(<FontAwesomeIcon icon = { faStar } className="ratingStars"/>, " ")
+          stars.push(<FontAwesomeIcon key={i} icon = { faStar } className="ratingStars"/>, " ")
         } else {
-          stars.push(<FontAwesomeIcon icon = { farStar  } className="ratingStars"/>, " ")
+          stars.push(<FontAwesomeIcon key={i} icon = { farStar  } className="ratingStars"/>, " ")
         }
       }
 
-      return stars
+      return stars;
     }
 
     return (

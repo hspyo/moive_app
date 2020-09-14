@@ -36,7 +36,6 @@ function Popular() {
           Movies.map((movie, index) => (
             <React.Fragment key={index}>
               <MovieList
-                index={index}
                 image={
                   movie.poster_path
                     ? `${IMAGE_BASE_URL}w500${movie.poster_path}`

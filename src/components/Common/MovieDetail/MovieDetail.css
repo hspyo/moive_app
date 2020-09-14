@@ -7,6 +7,7 @@
   font-size: 2.5rem;
   font-weight: 900;
   color: #ffffff;
+  padding: 5% 0;
 }
 
 .casts {
@@ -50,5 +51,14 @@
     grid-template-columns: 1fr 1fr;
     width: 100%;
   }
+
+  .cast__toggle__btn :hover {
+    background: #16152d;
+    color: #ffffff;
+  }
   
+  .cast__toggle__btn :active {
+    background: #ffffff;
+    color: #0F0D1A;
+  }
 }

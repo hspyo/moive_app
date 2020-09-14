@@ -32,4 +32,9 @@
     width: 100%;
     background: #121022;
   }
+
+  .movie__description p {
+    margin-right: 15px;
+  }
+
 }

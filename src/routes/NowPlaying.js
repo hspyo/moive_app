@@ -27,6 +27,7 @@ function NowPlaying() {
     }`;
     fetchMovies(endpoint);
   };
+  
   return (
     <section className="container">
       <div className="section__title">현재 상영작</div>
@@ -50,7 +51,7 @@ function NowPlaying() {
           ))}
       </div>
       <div className="moreBtn">
-        <button onClick={moreBtn}>View More</button>
+        <button onClick={moreBtn}>View More {CurrentPage}</button>
       </div>
     </section>
   );
