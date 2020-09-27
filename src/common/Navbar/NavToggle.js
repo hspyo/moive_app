@@ -4,19 +4,21 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-function NavToggle() {
+export default function NavToggle() {
   
   const [ToggleOpen, setToggleOpen] = useState(false);
 
   const ToggleBtn = () => {
     setToggleOpen(!ToggleOpen);
   };
- 
+
   return (
 
     <div className="nav__menu__toggle">
       <div className="nav__toggle__box">
-        <button className="nav__toggle__btn" onClick={ToggleBtn}> <FontAwesomeIcon icon={ faBars }/> </button>
+        <button className="nav__toggle__btn" onClick={ToggleBtn}> 
+          <FontAwesomeIcon icon={ faBars }/> 
+        </button>
       </div>
     {ToggleOpen && 
       <div className="nav__menu__open">
@@ -26,8 +28,5 @@ function NavToggle() {
         <Link to="/topRated" onClick={ToggleBtn} className="nav__menu__item">높은 평점</Link>
       </div> }
     </div>
-
  );
 }
-
-export default NavToggle;

@@ -1,11 +1,10 @@
 import React from "react";
 import "./MovieInfo.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-function MovieInfo(props) {
-  const { movie } = props; 
+
+export default function MovieInfo({ movie }) {
+   
   return (
-    <div className="tableBox">
+    <div id="movie__info">
       <div className="info__header" colSpan="4">
         Overview
       </div>
@@ -31,7 +30,7 @@ function MovieInfo(props) {
           </tr>
           <tr>
             <td className="info">Ratings</td>
-            <td className="info__value"> ⭐️ {movie.vote_average} </td>
+            <td className="info__value"> <span role="img" aria-label="star">⭐️</span> {movie.vote_average} </td>
             <td className="info">Popularity</td>
             <td className="info__value">{movie.popularity}</td>
           </tr>
@@ -40,5 +39,3 @@ function MovieInfo(props) {
     </div>
   );
 }
-
-export default MovieInfo;

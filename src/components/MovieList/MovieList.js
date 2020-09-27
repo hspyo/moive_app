@@ -5,12 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
-function MovieList(props) {
+export default function MovieList({ 
+  image,
+  movieId,
+  movieRate,
+  movieName,
+  movieReleaseDate,
+  movieLanguage}) {
 
-    const movieRate = props.movieRate;
-    const createStar = (star) => {
+  const createStar = (star) => {
       let stars = []
-
       for (let i=0; i<5; i++) {
         if(i <= star) {
           stars.push(<FontAwesomeIcon key={i} icon = { faStar } className="ratingStars"/>, " ")
@@ -18,20 +22,19 @@ function MovieList(props) {
           stars.push(<FontAwesomeIcon key={i} icon = { farStar  } className="ratingStars"/>, " ")
         }
       }
-
       return stars;
     }
 
     return (
-      <div className="movie">
-        <Link to={`/movie/${props.movieId}`}>
-          <img src={props.image} alt={props.movieName} />
+      <div id="movie__list">
+        <Link className="movie__list__link"to={`/movie/${movieId}`}>
+          <img className="movie__list__img" src={image} alt="영화 포스터" />
         </Link>
-        <div className="movie__info">
-          <h1>{props.movieName}</h1>
+        <div className="movie__list__info">
+          <h1>{movieName}</h1>
           <h3>
-            {props.movieReleaseDate} <br/>
-            Language : {props.movieLanguage}
+            {movieReleaseDate} <br/>
+            Language : {movieLanguage}
           </h3>
           {movieRate >= 9.5 && movieRate <= 10 && <p> <span>{movieRate}</span> {createStar(5)}</p>}
           {movieRate >= 8 && movieRate < 9.5 && <p><span>{movieRate}</span> {createStar(4)}</p>}
@@ -42,6 +45,3 @@ function MovieList(props) {
       </div>
     );
   }
-  
-
-export default MovieList;

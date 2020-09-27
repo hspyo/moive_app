@@ -1,17 +1,9 @@
-.tableBox {
+#movie__info {
   padding: 1.5rem;
   color: #4a485d;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-  background: #0F0D1A;
-}
-
-.info__header {
-  padding-bottom: 1rem;
-  color: #FC0014;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
+  background: #0f0d1a;
 }
 
 table {
@@ -27,6 +19,14 @@ td {
   padding: 15px;
 }
 
+.info__header {
+  padding-bottom: 1rem;
+  color: #fc0014;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 .info {
   font-size: 2rem;
   font-weight: 600;
@@ -38,13 +38,15 @@ td {
   color: #ffffff;
 }
 
+
+
+
 @media screen and (max-width: 1090px) {
-  .info__header {
-    text-align: center;
-  }
+
   table {
     width: 100%;
   }
+
   tr {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -58,7 +60,11 @@ td {
     width: 100%;
     padding: 10px 0;
   }
-
+  
+  .info__header {
+    text-align: center;
+  }
+  
   .info {
     font-size: 1.8rem;
   }
@@ -67,5 +73,4 @@ td {
     font-size: 1.4rem;
     text-align: start;
   }
-
 }

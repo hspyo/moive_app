@@ -1,0 +1,20 @@
+.movie__description {
+  position: absolute;
+  max-width: 600px;
+  bottom: 2rem;
+  margin-left: 2rem;
+  color: #ffffff;
+}
+
+.movie__description p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 1090px) {
+
+  .movie__description p {
+    margin-right: 15px;
+  }
+
+}

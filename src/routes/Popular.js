@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
-import MovieList from "../components/Common/MovieList/MovieList";
+import MovieList from "../components/MovieList/MovieList";
 import "./Container.css";
 
-function Popular() {
+export default function Popular() {
   const [Movies, setMovies] = useState([]);
   const [CurrentPage, setCurrentPage] = useState(0);
+
   useEffect(() => {
     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
     fetchMovies(endpoint);
   }, []);
-  console.log(Movies);
 
   const fetchMovies = (endpoint) => {
     fetch(endpoint)
@@ -21,6 +21,7 @@ function Popular() {
         setCurrentPage(response.page);
       });
   };
+
   const moreBtn = () => {
     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${
       CurrentPage + 1
@@ -30,7 +31,7 @@ function Popular() {
 
   return (
     <section className="container">
-      <div className="section__title">인기작</div>
+      <h1 className="movie__section">인기작</h1>
       <div className="movie__container">
         {Movies &&
           Movies.map((movie, index) => (
@@ -50,11 +51,9 @@ function Popular() {
             </React.Fragment>
           ))}
       </div>
-      <div className="moreBtn">
+      <div className="movie__more__btn">
         <button onClick={moreBtn}>View More</button>
       </div>
     </section>
   );
 }
-
-export default Popular;

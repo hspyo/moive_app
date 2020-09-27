@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap");
 
 .nav {
   position: absolute;
@@ -8,15 +8,15 @@
   width: 100%;
   padding: 10px 20px;
   transition: all 300ms ease-in-out;
-  font-family: 'Yeon Sung', cursive;
+  font-family: "Yeon Sung", cursive;
   font-size: 1.4rem;
   z-index: 1;
 }
 
 .nav__logo {
- display: flex;
- justify-content: center;
- align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav__menu {
@@ -85,7 +85,7 @@
   outline: none;
 }
 
-@media screen and (max-width: 970px ) {
+@media screen and (max-width: 970px) {
   .nav {
     flex-direction: column;
     align-items: flex-start;

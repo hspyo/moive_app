@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
-import MovieList from "../components/Common/MovieList/MovieList";
+import MovieList from "../components/MovieList/MovieList";
 import "./Container.css";
 
-function TopRated() {
+export default function Upcoming() {
   const [Movies, setMovies] = useState([]);
   const [CurrentPage, setCurrentPage] = useState(0);
 
@@ -29,7 +29,7 @@ function TopRated() {
   };
   return (
     <section className="container">
-      <div className="section__title">개봉 예정작</div>
+      <h1 className="movie__section">개봉 예정작</h1>
       <div className="movie__container">
         {Movies &&
           Movies.map((movie, index) => (
@@ -49,11 +49,9 @@ function TopRated() {
             </React.Fragment>
           ))}
       </div>
-      <div className="moreBtn">
+      <div className="movie__more__btn">
         <button onClick={moreBtn}>View More</button>
       </div>
     </section>
   );
 }
-
-export default TopRated;

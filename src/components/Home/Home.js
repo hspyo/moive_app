@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../Config";
-import HomeImage from "./HomeImage";
+import MainImage from "../../common/MainImage/MainImage";
 import "./Home.css";
 
-function Home() {
+export default function Home() {
   const [HomeMovieImage, setHomeMovieImage] = useState(null);
 
   useEffect(() => {
@@ -13,16 +13,15 @@ function Home() {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-
         setHomeMovieImage(response.results[0]);
       });
   }, []);
 
   return (
-    <div className="home">
+    <section className="home">
       {/* Main Image */}
       {HomeMovieImage && (
-        <HomeImage
+        <MainImage
           image={`${IMAGE_BASE_URL}w1280${HomeMovieImage.backdrop_path}`}
           title={HomeMovieImage.original_title}
           text={HomeMovieImage.overview}
@@ -31,8 +30,6 @@ function Home() {
       <div className="home__description" >
         <h1>실시간 1위 영화 ⬆</h1>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Home;

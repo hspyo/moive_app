@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 import NavToggle from './NavToggle';
 
-function Navigation() {
+export default function Navigation() {
 
   return (
     <nav className="nav">
@@ -21,5 +21,3 @@ function Navigation() {
     </nav>
   );
 }
-
-export default Navigation;

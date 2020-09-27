@@ -10,20 +10,8 @@
   margin: 3% auto;
   text-align: center;
   font-family: 'Yeon Sung', cursive;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #ffffff;
-}
-.movie__description {
-  position: absolute;
-  max-width: 600px;
-  bottom: 2rem;
-  margin-left: 2rem;
-  color: #ffffff;
-}
-
-.movie__description p {
-  font-size: 1.2rem;
-  margin-top: 15px;
 }
 
 @media screen and (max-width: 1090px) {
@@ -31,10 +19,6 @@
     margin: 0%;
     width: 100%;
     background: #121022;
-  }
-
-  .movie__description p {
-    margin-right: 15px;
   }
 
 }
