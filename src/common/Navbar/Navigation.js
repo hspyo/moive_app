@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 import NavToggle from './NavToggle';
 
+// 네비게이션
 export default function Navigation() {
 
   return (

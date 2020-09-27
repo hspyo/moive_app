@@ -1,13 +1,15 @@
 import React from "react";
 import "./MovieInfo.css";
 
+// 영화 정보 컴포넌트
 export default function MovieInfo({ movie }) {
-   
+// MovieDetail로 부터 영화 데이터들이 담긴 movie를 전달받는다.
   return (
     <div id="movie__info">
       <div className="info__header" colSpan="4">
         Overview
       </div>
+      {/* 영화 제목, 개봉일자, 투표수, 랭귀지, 런타임, 개봉상태, 평점, 인기도*/}
       <table>
         <tbody colSpan="4">
           <tr>
