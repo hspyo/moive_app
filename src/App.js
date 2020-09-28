@@ -1,12 +1,12 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Navigation from "./common/Navbar/Navigation";
+import Navigation from "./components/Navbar/Navigation";
 import MovieDetail from "./components/MovieDetail/MovieDetail";
-import NowPlaying from "./routes/NowPlaying";
-import Popular from "./routes/Popular";
-import Upcoming from "./routes/Upcoming";
-import TopRated from "./routes/TopRated";
+import NowPlaying from "./routers/NowPlaying";
+import Popular from "./routers/Popular";
+import Upcoming from "./routers/Upcoming";
+import TopRated from "./routers/TopRated";
 import "./App.css";
 
 export default function App() {

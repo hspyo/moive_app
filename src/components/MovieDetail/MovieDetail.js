@@ -51,10 +51,10 @@ export default function MovieDetail(props) {
           text={Movie.overview}
         />
       )}
-
+      
       {/* 영화 정보 */}
       <MovieInfo movie={Movie} />
-      
+    
       {/* 배우 리스트 토글버튼 */}
       <div className="cast__toggle__btn">
         <button onClick={CastsToggleBtn}> View Casts </button>

@@ -4,5 +4,5 @@ import App from "./App";
 
 ReactDOM.render(
   <App />,
-  document.getElementById("potato")
+  document.getElementById("root")
 );

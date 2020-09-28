@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
-import MovieList from "../components/MovieList/MovieList";
+import MovieList from "../common/MovieList/MovieList";
 import "./Container.css";
 
 // 평점 높은 영화 목록 페이지
@@ -33,6 +33,9 @@ export default function TopRated() {
     fetchMovies(endpoint);
   };
 
+    // 영화 리스트 로딩 후에 더보기 버튼을 보여주기 위한 boolean값
+  let isListed = false;
+  
   return (
     <section className="container">
       <h1 className="movie__section">높은 평점작</h1>
@@ -53,13 +56,15 @@ export default function TopRated() {
                 movieLanguage={movie.original_language}
                 movieRate={movie.vote_average}
               />
+              {isListed = true}
             </React.Fragment>
           ))}
       </div>
-      {/* 영화 리스트 더보기 버튼 */}
+      {/* 영화 리스트가 로딩된 후 더보기 버튼을 보여준다. */}
+      {isListed &&
       <div className="movie__more__btn">
         <button onClick={moreBtn}>View More</button>
-      </div>
+      </div>}
     </section>
   );
 }
