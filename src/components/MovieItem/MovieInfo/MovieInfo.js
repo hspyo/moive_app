@@ -2,8 +2,8 @@ import React from "react";
 import "./MovieInfo.css";
 
 // 영화 정보 컴포넌트
+// MovieItem으로부터 영화정보 {movie}을 전달받는다.
 export default function MovieInfo({ movie }) {
-// MovieDetail로 부터 영화 데이터들이 담긴 movie를 전달받는다.
   return (
     <div id="movie__info">
       <div className="info__header" colSpan="4">

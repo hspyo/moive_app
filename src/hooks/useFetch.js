@@ -1,17 +1,19 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
+// URL를 전달받아 API를 호출한다.
 export default function useFetch(url) {
-  const [Movies, setMovies] = useState([]);
-  
-  // 인기 영화 리스트 API를 호출한다.
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(url);
       const json = await res.json();
-      setMovies([...Movies, ...json.results]);
+      setMovies([...movies, ...json.results]);
+      setLoading(false);
     };
     fetchData();
   }, [url]);
 
-  return Movies;
+  return [movies, loading];
 }

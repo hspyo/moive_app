@@ -11,6 +11,8 @@
   font-family: "Yeon Sung", cursive;
   font-size: 1.4rem;
   z-index: 1;
+  background-color: #121022;
+  opacity: 0.8;
 }
 
 .nav__logo {
