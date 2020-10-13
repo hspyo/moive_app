@@ -3,7 +3,7 @@ import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../Config";
 import MainImage from ".././MainImage/MainImage";
 import MovieInfo from "./MovieInfo/MovieInfo";
 import MovieCasts from "./MovieCasts/MovieCasts";
-import "./MovieItem.css";
+import styles from "./MovieItem.module.css";
 
 // 영화 상세페이지
 export default function MovieItem(props) {
@@ -39,7 +39,7 @@ export default function MovieItem(props) {
   };
 
   return (
-    <div id="movie__detail">
+    <section className={styles.movieItem}>
       {/* 영화 메인 포스터 */}
       {movie.backdrop_path && (
         <MainImage
@@ -53,15 +53,15 @@ export default function MovieItem(props) {
       <MovieInfo movie={movie} />
 
       {/* 영화배우 리스트 토글버튼 */}
-      <div className="cast__toggle__btn">
-        <button onClick={toggleCastBtn}> View Casts </button>
+      <div className={styles.castToggle}>
+        <button className={styles.castButton} onClick={toggleCastBtn}> View Casts </button>
       </div>
 
       {/* 영화배우 리스트 */}
       {castToggle && (
-        <section className="cast_box">
-          <h1>Casts</h1>
-          <div className="casts">
+        <div className={styles.castContainer}>
+          <h1 className={styles.castTitle}>Casts</h1>
+          <div className={styles.casts}>
             {casts &&
               casts.map((cast) => (
                 <MovieCasts
@@ -75,8 +75,8 @@ export default function MovieItem(props) {
                 />
               ))}
           </div>
-        </section>
+        </div>
       )}
-    </div>
+    </section>
   );
 }

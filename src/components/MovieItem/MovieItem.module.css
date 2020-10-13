@@ -1,14 +1,14 @@
-#movie__detail {
+.movieItem {
   width: 100%;
   margin: 0;
 }
 
-.cast_box {
+.castContainer {
   text-align: center;
   background: #0F0D1A;
 }
 
-.cast_box h1 {
+.castTitle {
   font-size: 2.5rem;
   font-weight: 900;
   color: #ffffff;
@@ -27,18 +27,18 @@
   color: #ffffff;
 }
 
-.cast__toggle__btn {
+.castToggle {
   text-align: center;
   padding: 5% 0;
   background: #0F0D1A;
 }
-.cast__toggle__btn :hover {
+.castToggle :hover {
  background: #ffffff;
  color: #16152d;
  cursor: pointer;
 }
 
-.cast__toggle__btn button {
+.castButton {
   background: #16152d;
   color: #ffffff;
   border-radius: 15px;
@@ -57,12 +57,12 @@
     width: 100%;
   }
 
-  .cast__toggle__btn :hover {
+  .castToggle :hover {
     background: #16152d;
     color: #ffffff;
   }
   
-  .cast__toggle__btn :active {
+  .castToggle :active {
     background: #ffffff;
     color: #0F0D1A;
   }

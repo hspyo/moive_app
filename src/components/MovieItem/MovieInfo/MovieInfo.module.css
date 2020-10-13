@@ -1,4 +1,4 @@
-#movie__info {
+.movieInfo {
   padding: 1.5rem;
   color: #4a485d;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
@@ -13,13 +13,8 @@ table {
   width: 80%;
 }
 
-td {
-  text-align: center;
-  width: 20%;
-  padding: 15px;
-}
 
-.info__header {
+.header {
   padding-bottom: 1rem;
   color: #fc0014;
   text-align: center;
@@ -27,12 +22,18 @@ td {
   font-weight: 700;
 }
 
+.info, .value {
+  text-align: center;
+  width: 20%;
+  padding: 15px;
+}
+
 .info {
   font-size: 2rem;
   font-weight: 600;
 }
 
-.info__value {
+.value {
   font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
@@ -55,21 +56,21 @@ td {
     justify-content: center;
     align-items: center;
   }
+  
+  .header {
+    text-align: center;
+  }
 
-  td {
+  .info, .value {
     width: 100%;
     padding: 10px 0;
-  }
-  
-  .info__header {
-    text-align: center;
   }
   
   .info {
     font-size: 1.8rem;
   }
 
-  .info__value {
+  .value {
     font-size: 1.4rem;
     text-align: start;
   }

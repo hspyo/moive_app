@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { API_KEY, API_URL, IMAGE_BASE_URL } from "../Config";
 import MovieList from "../components/MovieList/MovieList";
-import "./Container.css";
-import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreButton";
+import styles from "./Container.module.css";
+import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreBtn";
 import useFetch from "../hooks/useFetch";
 
 // 인기 영화 목록 페이지
@@ -21,9 +21,9 @@ export default function Popular() {
   };
 
   return (
-    <section className="container">
-      <h1 className="movie__section">인기작</h1>
-      <div className="movie__container">
+    <section className={styles.section}>
+      <h1 className={styles.header}>인기작</h1>
+      <div className={styles.container}>
         {/* 인기있는 영화리스트 */}
         {loading
           ? "Loading..."

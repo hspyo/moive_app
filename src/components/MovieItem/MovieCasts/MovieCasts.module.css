@@ -4,19 +4,19 @@
   margin: 10px;
 }
 
-.cast img {
+.castImg {
   width: 200px;
   height: 300px;
   border-radius: 5px;
 }
 
-.cast p {    
+.castName {    
   margin: 8px auto;
 }
 
 @media screen and (max-width: 1090px) {
 
-  .cast img {
+  .castImg {
     width: 100%;
     height: 200px;
   }

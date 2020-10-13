@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
 import MovieList from "../components/MovieList/MovieList";
-import "./Container.css";
+import styles from "./Container.module.css";
 import useFetch from "../hooks/useFetch";
-import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreButton";
+import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreBtn";
 
 // 개봉예정 영화 목록 페이지
 export default function Upcoming() {
@@ -21,9 +21,9 @@ export default function Upcoming() {
   };
 
   return (
-    <section className="container">
-      <h1 className="movie__section">개봉 예정작</h1>
-      <div className="movie__container">
+    <section className={styles.section}>
+      <h1 className={styles.header}>개봉 예정작</h1>
+      <div className={styles.container}>
         {/* 개봉예정 영화리스트 */}
         {loading
           ? "Loading..."

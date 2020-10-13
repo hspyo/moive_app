@@ -1,0 +1,37 @@
+.movieMoreBtn {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.button {
+  border-radius: 10px;
+  background: #1d0bd2;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 10px;
+  font-family: 'Yeon Sung', cursive;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.movieMoreBtn :hover {
+  background: #ffffff;
+  color: #1d0bd2;
+}
+
+@media screen and (max-width: 1090px) {
+
+  .movieMoreBtn :hover {
+    background: #1d0bd2;
+    color: #ffffff;
+  }
+  
+  .movieMoreBtn :active {
+    background: #ffffff;
+    color: #1d0bd2;
+  }
+  
+}
+
+

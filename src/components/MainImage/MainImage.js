@@ -1,5 +1,5 @@
 import React from "react";
-import "./MainImage.css";
+import styles from "./MainImage.module.css";
 
 // 메인 이미지
 export default function MainImage({ image, title, text }) {
@@ -18,9 +18,9 @@ export default function MainImage({ image, title, text }) {
       }}
     > 
     {/* 제목, 설명. 설명은 200글자까지로 축약한다. */}
-        <div className="movie__description">
+        <div className={styles.mainImage}>
           <h1> {title} </h1>
-          <p> {text.slice(0, 200)} ...</p>
+          <p className={styles.description}> {text.slice(0, 200)} ...</p>
         </div>
     </div>
   );

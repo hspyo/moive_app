@@ -1,11 +1,11 @@
-.home {
+.movieHome {
   width: 100%;
   height: 100vh;
   margin: 0;
   background: #121022;
 }
 
-.home__description {
+.movieDetail {
   width: 85%;
   margin: 3% auto;
   text-align: center;
@@ -14,8 +14,12 @@
   color: #ffffff;
 }
 
+.movieDesc {
+  font-size: 2.3rem;
+}
+
 @media screen and (max-width: 1090px) {
-  .home__description {
+  .movieDetail {
     margin: 0%;
     width: 100%;
     background: #121022;
