@@ -3,16 +3,15 @@ import { API_KEY, API_URL, IMAGE_BASE_URL } from "../Config";
 import MovieList from "../components/MovieList/MovieList";
 import styles from "./Container.module.css";
 import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreBtn";
-import useFetch from "../hooks/useFetch";
+import useFetchList from "../hooks/useFetchList";
 
 // 인기 영화 목록 페이지
 export default function Popular() {
   const [currentPage, setCurrentPage] = useState(1);
 
-  // 인기 영화 리스트 API를 호출한다.
-  const [popularMovies, loading] = useFetch(
-    `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`
-  );
+  // Fetch 인기 영화 리스트
+  const url = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`
+  const [popularMovies, loading] = useFetchList(url);
 
   // 영화 리스트 더보기 버튼 함수.
   const showMoreMovies = (currentPage) => {
@@ -25,9 +24,9 @@ export default function Popular() {
       <h1 className={styles.header}>인기작</h1>
       <div className={styles.container}>
         {/* 인기있는 영화리스트 */}
-        {loading
-          ? "Loading..."
-          : popularMovies.map(movie => (
+        {loading && <p>Loading...</p>}
+        {!loading &&
+          popularMovies.map((movie) => (
             <MovieList
               key={movie.id}
               image={
@@ -45,9 +44,8 @@ export default function Popular() {
         }
       </div>
       {/* 영화 리스트 더보기 버튼 */}
-      {loading 
-        ? "Loading..."
-        : <MovieMoreBtn showMoreMovies={showMoreMovies} currentPage={currentPage}/>
+      {!loading &&
+        <MovieMoreBtn showMoreMovies={showMoreMovies} currentPage={currentPage} />
       }
     </section>
   );

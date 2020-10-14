@@ -1,4 +1,4 @@
-#movie__list {
+.movieList {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
   background: #16152d;
 }
 
-.movie__list__img {
+.movieImg {
   position: relative;
   width: 70%;
   height: 50%;
@@ -16,7 +16,7 @@
   border-radius: 5px;
 }
 
-.movie__list__info {
+.movieDetail {
   margin-top: 10px;
   width: 100%;
   height: 100%;
@@ -24,53 +24,53 @@
   color: #ffffff;
 }
 
-.movie__list__info h1 {
+.movieName {
   font-size: 1.8rem;
   width: 100%;
 }
 
-.movie__list__info h3 {
+.movieInfo {
   margin: 20px auto;
   color: #4a485d;
 }
 
-.movie__list__info p {
+.movieRate {
   font-size: 1rem;
 }
 
-.movie__list__info span {
+.score {
   color: #dcbe3e;
   font-size: 1.8rem;
   padding-right: 10px;
 }
 
-.ratingStars {
+.starIcon {
   color: #dcbe3e;
   margin-bottom: 5px;
 }
 
 @media screen and (max-width: 1090px) {
 
-  #movie__list {
+  .movieList {
     width: 100%;
     padding-bottom: 5%;
     margin: 2% auto;
   }
 
-  .movie__list__info h3 {
+  .movieInfo {
     font-size: 0.9rem;
   }
 
-  .movie__list__link {
+  .movieLink {
     width: 90%;
   }
 
-  .movie__list__img {
+  .movieImg {
     width: 70%;
     left: 20px;
   }
 
-  .movie__list__info h1{
+  .movieName{
     font-size: 1.5rem;
   }
   

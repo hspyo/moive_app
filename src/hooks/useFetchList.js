@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 // URL를 전달받아 API를 호출한다.
-export default function useFetch(url) {
+export default function useFetchList(url) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./MovieList.css";
+import styles from "./MovieList.module.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -20,9 +20,9 @@ export default function MovieList({
       let stars = []
       for (let i=0; i<5; i++) {
         if(i <= star) {
-          stars.push(<FontAwesomeIcon key={i} icon = { faStar } className="ratingStars"/>, " ")
+          stars.push(<FontAwesomeIcon key={i} icon = { faStar } className={styles.starIcon}/>, " ")
         } else {
-          stars.push(<FontAwesomeIcon key={i} icon = { farStar  } className="ratingStars"/>, " ")
+          stars.push(<FontAwesomeIcon key={i} icon = { farStar  } className={styles.starIcon}/>, " ")
         }
       }
       return stars;
@@ -30,22 +30,22 @@ export default function MovieList({
   
   // 영화포스터, 영화제목, 개봉일자, 랭귀지, 평점을 반환한다.
     return (
-      <div id="movie__list">
-        <Link className="movie__list__link"to={`/movie/${movieId}`}>
-          <img className="movie__list__img" src={image} alt="영화 포스터" />
+      <div className={styles.movieList}>
+        <Link className={styles.movieLink}to={`/movie/${movieId}`}>
+          <img className={styles.movieImg} src={image} alt="영화 포스터" />
         </Link>
-        <div className="movie__list__info">
-          <h1>{movieName}</h1>
-          <h3>
+        <div className={styles.movieDetail}>
+          <h1 className={styles.movieName}>{movieName}</h1>
+          <p className={styles.movieInfo}>
             {movieReleaseDate} <br/>
             Language : {movieLanguage}
-          </h3>
+          </p>
           {/* 영화 평점에 비례하여 별 개수를 반환한다. */}
-          {movieRate >= 9.5 && movieRate <= 10 && <p> <span>{movieRate}</span> {createStar(5)}</p>}
-          {movieRate >= 8 && movieRate < 9.5 && <p><span>{movieRate}</span> {createStar(4)}</p>}
-          {movieRate >= 5 && movieRate < 8 && <p><span>{movieRate}</span> {createStar(3)}</p>}
-          {movieRate >= 2 && movieRate < 5 && <p><span>{movieRate}</span> {createStar(2)}</p>}
-          {movieRate >= 0 && movieRate < 2 && <p><span>{movieRate}</span> {createStar(1)}</p>}
+          {movieRate >= 9.5 && movieRate <= 10 && <p className={movieRate}> <span className={styles.score}>{movieRate}</span> {createStar(5)}</p>}
+          {movieRate >= 8 && movieRate < 9.5 && <p className={movieRate}><span className={styles.score}>{movieRate}</span> {createStar(4)}</p>}
+          {movieRate >= 5 && movieRate < 8 && <p className={movieRate}><span className={styles.score}>{movieRate}</span> {createStar(3)}</p>}
+          {movieRate >= 2 && movieRate < 5 && <p className={movieRate}><span className={styles.score}>{movieRate}</span> {createStar(2)}</p>}
+          {movieRate >= 0 && movieRate < 2 && <p className={movieRate}><span className={styles.score}>{movieRate}</span> {createStar(1)}</p>}
         </div>
       </div>
     );

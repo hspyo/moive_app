@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
 import MovieList from "../components/MovieList/MovieList";
 import styles from "./Container.module.css";
-import useFetch from "../hooks/useFetch";
+import useFetchList from "../hooks/useFetchList";
 import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreBtn";
 
 // 현재상영중인 영화 목록 페이지
@@ -10,9 +10,8 @@ export default function NowPlaying() {
   const [currentPage, setCurrentPage] = useState(1);
 
   // 현재 상영중인 영화 리스트 API를 호출한다.
-  const [nowPlayingMovies, loading] = useFetch(
-    `${API_URL}movie/now_playing?api_key=${API_KEY}&language=en-US&page=${currentPage}`
-  );
+  const url = `${API_URL}movie/now_playing?api_key=${API_KEY}&language=en-US&page=${currentPage}`
+  const [nowPlayingMovies, loading] = useFetchList(url);
 
   // 영화 리스트 더보기 버튼 함수.
   const showMoreMovies = (currentPage) => {
@@ -25,9 +24,9 @@ export default function NowPlaying() {
       <h1 className={styles.header}>현재 상영작</h1>
       <div className={styles.container}>
         {/* 현재상영중인 영화리스트 */}
-        {loading
-          ? "Loading..."
-          : nowPlayingMovies.map(movie => (
+        {loading && <p>Loading...</p>}
+        {!loading &&
+          nowPlayingMovies.map((movie) => (
             <MovieList
               key={movie.id}
               image={
@@ -45,9 +44,8 @@ export default function NowPlaying() {
         }
       </div>
       {/* 영화 리스트 더보기 버튼 */}
-      {loading 
-        ? "Loading..."
-        : <MovieMoreBtn showMoreMovies={showMoreMovies} currentPage={currentPage}/>
+      {!loading &&
+        <MovieMoreBtn showMoreMovies={showMoreMovies} currentPage={currentPage} />
       }
     </section>
   );

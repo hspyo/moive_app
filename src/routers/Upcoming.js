@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
 import MovieList from "../components/MovieList/MovieList";
 import styles from "./Container.module.css";
-import useFetch from "../hooks/useFetch";
+import useFetchList from "../hooks/useFetchList";
 import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreBtn";
 
 // 개봉예정 영화 목록 페이지
 export default function Upcoming() {
   const [currentPage, setCurrentPage] = useState(1);
 
-  // 개봉예정 영화 리스트 API를 호출한다.
-  const [upcomingMovies, loading] = useFetch(
-    `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=${currentPage}`
-  );
+  // Fetch 개봉예정 영화 리스트 
+  const url = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=${currentPage}`;
+  const [upcomingMovies, loading] = useFetchList(url);
 
   // 영화 리스트 더보기 버튼 함수.
   const showMoreMovies = (currentPage) => {
@@ -25,9 +24,9 @@ export default function Upcoming() {
       <h1 className={styles.header}>개봉 예정작</h1>
       <div className={styles.container}>
         {/* 개봉예정 영화리스트 */}
-        {loading
-          ? "Loading..."
-          : upcomingMovies.map(movie => (
+        {loading && <p>Loading...</p>}
+        {!loading &&
+          upcomingMovies.map(movie => (
             <MovieList
               key={movie.id}
               image={
@@ -44,9 +43,8 @@ export default function Upcoming() {
         }
       </div>
       {/* 영화 리스트 더보기 버튼 */}
-      {loading 
-        ? "Loading..."
-        : <MovieMoreBtn showMoreMovies={showMoreMovies} currentPage={currentPage}/>
+      {!loading &&
+        <MovieMoreBtn showMoreMovies={showMoreMovies} currentPage={currentPage} />
       }
     </section>
   );

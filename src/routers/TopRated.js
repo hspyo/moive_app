@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../Config";
 import MovieList from "../components/MovieList/MovieList";
 import styles from "./Container.module.css";
-import useFetch from "../hooks/useFetch";
+import useFetchList from "../hooks/useFetchList";
 import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreBtn";
 
 // 평점 높은 영화 목록 페이지
 export default function TopRated() {
   const [currentPage, setCurrentPage] = useState(1);
 
-  // 평점 높은 영화 리스트 API를 호출한다.
-  const [topRatedmovies, loading] = useFetch(
-    `${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=${currentPage}`
-  );
+  // Fetch 평점 높은 영화 리스트
+  const url = `${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=${currentPage}`;
+  const [topRatedmovies, loading] = useFetchList(url);
 
   // 영화 리스트 더보기 버튼 함수.
   const showMoreMovies = (currentPage) => {
@@ -22,12 +21,12 @@ export default function TopRated() {
 
   return (
     <section className={styles.section}>
-      <h1 className={styles.header}>높은 평점작</h1>
+      <h1 className={styles.header}>인기작</h1>
       <div className={styles.container}>
-        {/* 평점 높은 영화리스트 */}
-        {loading
-          ? "Loading..."
-          : topRatedmovies.map((movie) => (
+        {/* 인기있는 영화리스트 */}
+        {loading && <p>Loading...</p>}
+        {!loading &&
+          topRatedmovies.map((movie) => (
             <MovieList
               key={movie.id}
               image={
@@ -44,10 +43,9 @@ export default function TopRated() {
           ))
         }
       </div>
-    {/* 영화리스트 더보기 버튼 */}
-    {loading 
-      ? "Loading..."
-      : <MovieMoreBtn showMoreMovies={showMoreMovies} currentPage={currentPage}/>
+    {/* 영화 리스트 더보기 버튼 */}
+    {!loading &&
+      <MovieMoreBtn showMoreMovies={showMoreMovies} currentPage={currentPage} />
     }
     </section>
   );
