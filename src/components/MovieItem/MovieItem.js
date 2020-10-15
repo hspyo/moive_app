@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../../Config";
 import MainImage from ".././MainImage/MainImage";
 import MovieInfo from "./MovieInfo/MovieInfo";
@@ -42,7 +42,7 @@ export default function MovieItem({ match: { params : { movieId } }}) {
                 image={
                   cast.profile_path
                     ? `${IMAGE_BASE_URL}w500${cast.profile_path}`
-                    : "null"
+                    : null
                 }
                 castName={cast.name}
               />

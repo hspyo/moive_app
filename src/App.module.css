@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #eff3f7;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.section {
+  margin: 0;
+  padding: 80px 30px;
+  width: 100vw;
+  background: #121022;
+}
+
+.reloadBtn {
+  position: relative;
+  left: 47%;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  margin-bottom: 10%;
+}
+
+.reloadLink {
+  color: #fff;
+}
+
+.searchResult {
+  color: #fff;
+  margin-left: 12%;
+  margin-bottom: 3%;
+}
+
+.searchMsg {
+  color: #fff;
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 30px;
+  color: #fff;
+  font-family: "Yeon Sung", cursive;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: flex-start;
+  grid-gap: 50px 30px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+@media screen and (max-width: 1090px) {
+
+  .container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 0;
+  }
+
+  .reloadBtn {
+    left: 40%;
+    margin-bottom: 15%;
+  }
+}
+

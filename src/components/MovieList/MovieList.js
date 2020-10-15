@@ -32,7 +32,7 @@ export default function MovieList({
     return (
       <div className={styles.movieList}>
         <Link className={styles.movieLink}to={`/movie/${movieId}`}>
-          <img className={styles.movieImg} src={image} alt="영화 포스터" />
+          <img className={styles.movieImg} src={image ? image : require("../MovieItem/imgs/no_poster.jpg")} alt="영화 포스터" />
         </Link>
         <div className={styles.movieDetail}>
           <h1 className={styles.movieName}>{movieName}</h1>
