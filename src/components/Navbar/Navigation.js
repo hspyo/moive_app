@@ -25,7 +25,7 @@ export default function Navigation({ onSearch }) {
   return (
     <nav className={styles.navigation}>
       <div className={styles.logo}>
-      <img className={styles.logoImg} src={require("./imgs/logo.png")} alt="로고" />
+        <Link to="/"> <img className={styles.logoImg} src={require("./imgs/logo.png")} alt="로고" /></Link>
         <Link className={styles.title} to="/" >MovieTown</Link>
       </div>
       <div className={styles.search}>

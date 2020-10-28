@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { API_KEY } from "./Config";
-import SearchApi from "./service/searchApi";
+import SearchMovie from './service/searchMovie';
 
-const searchApi = new SearchApi(API_KEY);
+const searchMovie = new SearchMovie(API_KEY);
 ReactDOM.render(
   <React.StrictMode>
-    <App searchApi={searchApi} />
+    <App searchMovie={searchMovie} />
   </React.StrictMode>,
   document.getElementById("root")
 );

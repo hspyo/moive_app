@@ -1,6 +1,6 @@
 import { API_KEY, API_URL } from '../Config';
 
-class SearchApi {
+class SearchMovie {
   constructor(key) {
     this.ket = key;
   }
@@ -14,4 +14,4 @@ class SearchApi {
   }
 }
 
-export default SearchApi;
+export default SearchMovie;
