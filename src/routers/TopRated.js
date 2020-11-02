@@ -7,13 +7,14 @@ import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreBtn";
 
 // 평점 높은 영화 목록 페이지
 export default function TopRated() {
+  // 현재페이지 상태값
   const [currentPage, setCurrentPage] = useState(1);
 
   // Fetch 평점 높은 영화 리스트
   const url = `${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=${currentPage}`;
   const [topRatedmovies, loading] = useFetchList(url);
 
-  // 영화 리스트 더보기 버튼 함수.
+  // 영화 리스트 다음 페이지 보여주는 함수.
   const showMoreMovies = (currentPage) => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
@@ -23,7 +24,7 @@ export default function TopRated() {
     <section className={styles.section}>
       <h1 className={styles.header}>인기작</h1>
       <div className={styles.container}>
-        {/* 인기있는 영화리스트 */}
+        {/* 평점 높은 영화리스트 */}
         {loading && <p>Loading...</p>}
         {!loading &&
           topRatedmovies.map((movie) => (

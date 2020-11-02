@@ -19,7 +19,7 @@ export default function MovieItem({ match: { params : { movieId } }}) {
 
   return (
     <section className={styles.movieItem}>
-      {/* 영화 메인 포스터 */}
+      {/* 영화 포스터 */}
       {!movieInfo && <p>Loading...</p>}
       {movieInfo.backdrop_path && (
         <MainImage

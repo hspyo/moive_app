@@ -5,18 +5,20 @@ import styles from "./Search.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 
-// 평점 높은 영화 목록 페이지
+// 검색 결과 화면
 export default function Search({ movie, reloadPage }) {
   const resetPage = () => {
     reloadPage(false);
   };
   return (
     <section className={styles.section}>
+      {/* 뒤로가기 버튼 */}
       <button className={styles.reloadBtn} onClick={resetPage}>
         <FontAwesomeIcon icon={faLongArrowAltLeft} /> 뒤로가기 
       </button>
-      {/* 검색 결과 */}
+      {/* 검색 결과 없을 경우 */}
       {!movie && <p className={styles.searchMsg}> 검색 결과가 없습니다. </p>}
+      {/* 검색 결과 있을 경우 */}
       {movie && <p className={styles.searchResult}>검색 결과 {movie.length} </p>}
       {movie && (
         <div className={styles.container}>

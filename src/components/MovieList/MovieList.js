@@ -6,7 +6,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 // 영화 리스트 컴포넌트
-// NowPlaying, Popular, TopRated, Upcoming 라우터 컴포넌트로부터 속성값을 전달받는다.
+// NowPlaying, Popular, TopRated, Upcoming 라우터 컴포넌트로부터 속성값들을 전달받는다.
 export default function MovieList({ 
   image,
   movieId,

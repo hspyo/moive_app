@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export default function useFetchList(url) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(url);

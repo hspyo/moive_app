@@ -5,11 +5,11 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from './NavToggle.module.css';
 // 네비게이션 토글바
 export default function NavToggle() {
-  
-  const [ToggleButton, setToggleButton] = useState(false);
+  // 네이게이션 토글 상태값
+  const [toggleButton, setToggleButton] = useState(false);
 
   const openToggle = () => {
-    setToggleButton(!ToggleButton);
+    setToggleButton(!toggleButton);
   };
 
   return (
@@ -19,8 +19,8 @@ export default function NavToggle() {
           <FontAwesomeIcon icon={ faBars }/> 
         </button>
       </div>
-      {/* 토글이 열렸을 경우 */}
-    {ToggleButton && 
+    {/* 토글이 열렸을 경우 */}
+    {toggleButton && 
       <div className={styles.menuOpen}>
         <Link to="/playing" onClick={openToggle} className={styles.item}>현재 상영작</Link>
         <Link to="/popular" onClick={openToggle} className={styles.item}>인기</Link>

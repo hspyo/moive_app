@@ -7,13 +7,14 @@ import useFetchList from "../hooks/useFetchList";
 
 // 인기 영화 목록 페이지
 export default function Popular() {
+  // 현재페이지 상태값
   const [currentPage, setCurrentPage] = useState(1);
 
   // Fetch 인기 영화 리스트
   const url = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`
   const [popularMovies, loading] = useFetchList(url);
 
-  // 영화 리스트 더보기 버튼 함수.
+  // 영화 리스트 다음 페이지 보여주는 함수.
   const showMoreMovies = (currentPage) => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);

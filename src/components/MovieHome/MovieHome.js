@@ -13,8 +13,9 @@ export default function MovieHome() {
   
   return (
     <section className={styles.movieHome}>
-      {/* 실시간 1위 영화 (인기영화 리스트 중 0번째 배열) */}
+      {/* 로딩중인 경우 */}
       {loading && <p>Loading...</p>}
+      {/* 실시간 1위 영화 (인기영화 리스트 중 0번째 배열) */}
       {!loading && (
         <MainImage
           image={`${IMAGE_BASE_URL}w1280${topMovie[0].backdrop_path}`}

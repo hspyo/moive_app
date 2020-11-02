@@ -7,13 +7,14 @@ import MovieMoreBtn from "../components/MovieMoreBtn/MovieMoreBtn";
 
 // 개봉예정 영화 목록 페이지
 export default function Upcoming() {
+  // 현재페이지 상태값
   const [currentPage, setCurrentPage] = useState(1);
 
   // Fetch 개봉예정 영화 리스트 
   const url = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=${currentPage}`;
   const [upcomingMovies, loading] = useFetchList(url);
 
-  // 영화 리스트 더보기 버튼 함수.
+  // 영화 리스트 다음 페이지 보여주는 함수.
   const showMoreMovies = (currentPage) => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
